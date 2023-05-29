@@ -1,0 +1,80 @@
+C:\Program Files (x86)\Google\Cloud SDK>gcloud sql instances describe nodejs-calculator-db
+backendType: SECOND_GEN
+connectionName: my-project-amir-387708:us-central1:nodejs-calculator-db
+createTime: '2023-05-28T12:40:31.728Z'
+databaseInstalledVersion: MYSQL_8_0_26
+databaseVersion: MYSQL_8_0
+etag: 416ff36506b4d8588deba03931e7b238fa3ac3e6d8cf90c50653d0aa0004f762
+gceZone: us-central1-c
+instanceType: CLOUD_SQL_INSTANCE
+ipAddresses:
+- ipAddress: 34.29.247.160
+  type: PRIMARY
+kind: sql#instance
+maintenanceVersion: MYSQL_8_0_26.R20230314.03_06
+name: nodejs-calculator-db
+project: my-project-amir-387708
+region: us-central1
+selfLink: https://sqladmin.googleapis.com/sql/v1beta4/projects/my-project-amir-387708/instances/nodejs-calculator-db
+serverCaCert:
+  cert: |-
+    -----BEGIN CERTIFICATE-----
+    MIIDfzCCAmegAwIBAgIBADANBgkqhkiG9w0BAQsFADB3MS0wKwYDVQQuEyQ4Y2M3
+    Yzk5NC1lODQwLTQ3ZTYtYWU4YS1hNGRlYjFmODMxN2UxIzAhBgNVBAMTGkdvb2ds
+    ZSBDbG91ZCBTUUwgU2VydmVyIENBMRQwEgYDVQQKEwtHb29nbGUsIEluYzELMAkG
+    A1UEBhMCVVMwHhcNMjMwNTI4MTI0MTMxWhcNMzMwNTI1MTI0MjMxWjB3MS0wKwYD
+    VQQuEyQ4Y2M3Yzk5NC1lODQwLTQ3ZTYtYWU4YS1hNGRlYjFmODMxN2UxIzAhBgNV
+    BAMTGkdvb2dsZSBDbG91ZCBTUUwgU2VydmVyIENBMRQwEgYDVQQKEwtHb29nbGUs
+    IEluYzELMAkGA1UEBhMCVVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+    AQCbFbxtSCdCGsjIhN1Uy46mSSQzUpZzfyvziCNcWo28lNxXOBkd6nBrSE7tbE84
+    xAyYIdiJcSXM/KJTOUpKbzgDwg/cjEU941FRFSl5QSWuN16N3Tzu5xcg5ZS0FGkW
+    USHn07PLDz5GAX6huV+J1dI5+TgTNkDphXmrnYzV+6jbo/CbGQBdF0YciyQbM1Hl
+    gXnTHk4ZaTzrhp28aWBIlBUi+i71HWPu0saRPsYn6T7jTtx6qUrdjDxDf89dpLO6
+    O3m7HlNCnz53kkjMKd5ViHeOD5HCoygxLGxt7v37dgGKuuWRMrpxtRoVyMHoeSox
+    GsoC9PN6yw5DOXSUOh/KS6v7AgMBAAGjFjAUMBIGA1UdEwEB/wQIMAYBAf8CAQAw
+    DQYJKoZIhvcNAQELBQADggEBAC8968iAtNc6sgGBvIdYqh0pAeubf9TJes+KvO+L
+    vU7R7iGgNumuYWmYp/sXd+YRUYcY42VKxWOgv7LMEWGseLDUk7F1HR2Y2jNRhDk2
+    r10+5s3yS3ylZ7snmhebVrt52PW27+psHtSSWnzE+OjJYvObVOZFsSL0Q3KxL7t4
+    AJSQrQE/Ltwb75WcUeRS1so7HiVPlB8WMTta+tSxQ8M4GOXTaDlV9+VU9Q12gVmQ
+    Jg7BFNinlumQU0n1Ohi0SUrJQO85ON33/wk5yeg5RLEvW100Nmx6J2X2XS3IV0P4
+    xksBhXf7yDvJPYfWyWkns6948Qy7P1J+5pUl39BO/zwO86k=
+    -----END CERTIFICATE-----
+  certSerialNumber: '0'
+  commonName: C=US,O=Google\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=8cc7c994-e840-47e6-ae8a-a4deb1f8317e
+  createTime: '2023-05-28T12:41:31.767Z'
+  expirationTime: '2033-05-25T12:42:31.767Z'
+  instance: nodejs-calculator-db
+  kind: sql#sslCert
+  sha1Fingerprint: 8870ce6d0b1e07f133d1821b102587f3d5fb12d2
+serviceAccountEmailAddress: p196094475332-0s5rog@gcp-sa-cloud-sql.iam.gserviceaccount.com
+settings:
+  activationPolicy: ALWAYS
+  availabilityType: ZONAL
+  backupConfiguration:
+    backupRetentionSettings:
+      retainedBackups: 7
+      retentionUnit: COUNT
+    enabled: false
+    kind: sql#backupConfiguration
+    startTime: 21:00
+    transactionLogRetentionDays: 7
+  connectorEnforcement: NOT_REQUIRED
+  dataDiskSizeGb: '10'
+  dataDiskType: PD_SSD
+  deletionProtectionEnabled: false
+  ipConfiguration:
+    ipv4Enabled: true
+  kind: sql#settings
+  locationPreference:
+    kind: sql#locationPreference
+    zone: us-central1-c
+  pricingPlan: PER_USE
+  replicationType: SYNCHRONOUS
+  settingsVersion: '1'
+  storageAutoResize: true
+  storageAutoResizeLimit: '0'
+  tier: db-n1-standard-1
+state: RUNNABLE
+
+C:\Program Files (x86)\Google\Cloud SDK>gcloud sql users set-password postgres --instance=nodejs-calculator-db --password=YourS3cur3Passw0rd
+Updating Cloud SQL user...done.
