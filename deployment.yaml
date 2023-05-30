@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nodejs-calculator
-          image: gcr.io/my-project-amir-387708/nodejs-calculator:v2
+          image: gcr.io/my-project-amir-387708/nodejs-calculator:$SHORT_SHA
           env:
             - name: CLOUD_SQL_CONNECTION_NAME
               value: my-project-amir-387708:us-central1:nodejs-calculator-db
