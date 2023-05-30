@@ -1,6 +1,6 @@
   steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/my-project-amir-387708/mnodejs-calculator", "."]
+    args: ["build", "-t", "gcr.io/my-project-amir-387708/nodejs-calculator", "."]
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/my-project-amir-387708/nodejs-calculator"]
   - name: "node:14"
