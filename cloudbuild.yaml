@@ -11,3 +11,4 @@
     args: ["test"]
 images:
   - "gcr.io/my-project-amir-387708/nodejs-calculator"
+logsBucket: "gs://your-logs-bucket"
