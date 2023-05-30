@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/$my-project-amir-387708/my-app", "."]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$my-project-amir-387708/my-app"]
+  - name: "node:14"
+    entrypoint: "npm"
+    args: ["install"]
+  - name: "node:14"
+    entrypoint: "npm"
+    args: ["test"]
+images:
+  - "gcr.io/$my-project-amir-387708/nodejs-calculator"
