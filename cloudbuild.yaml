@@ -1,14 +1,22 @@
-  steps:
+steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/my-project-amir-387708/nodejs-calculator", "."]
+    args: ["build", "-t", "gcr.io/my-project-amir-387708/nodejs-calculator:$SHORT_SHA", "."]
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/my-project-amir-387708/nodejs-calculator"]
+    args: ["push", "gcr.io/my-project-amir-387708/nodejs-calculator:$SHORT_SHA"]
   - name: "node:14"
     entrypoint: "npm"
     args: ["install"]
   - name: "node:14"
     entrypoint: "npm"
     args: ["test"]
+  - name: "gcr.io/cloud-builders/kubectl"
+    args:
+    - "apply"
+    - "-f"
+    - "deployment.yaml"
+    env:
+    - "CLOUDSDK_COMPUTE_ZONE=us-central1-a"
+    - "CLOUDSDK_CONTAINER_CLUSTER=my-cluster"
 images:
-  - "gcr.io/my-project-amir-387708/nodejs-calculator"
+  - "gcr.io/my-project-amir-387708/nodejs-calculator:$SHORT_SHA"
 logsBucket: "gs://your-logs-bucket"
